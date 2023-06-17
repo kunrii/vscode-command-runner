@@ -1,4 +1,4 @@
-# VSCode Command Runner (a fork for VSCodium)
+# VSCodium Command Runner (a fork for VSCodium)
 
 Run custom shell command defined in vs codium configuration and node module package.json
 
