@@ -1,6 +1,6 @@
-# VSCode Command Runner
+# VSCode Command Runner (a fork for VSCodium)
 
-Run custom shell command defined in vs code configuration and node module package.json
+Run custom shell command defined in vs codium configuration and node module package.json
 
 ## Features
 
@@ -108,7 +108,7 @@ or
 
 ## Usages
 
-* use shortcut `Ctrl+Shift+R` to select custom command
+* use shortcut `Ctrl+Alt+Space` to select custom command (this is the only difference from the original repo)
 * use shortcut `Ctrl+Alt+R` to run selected content as shell command
 * or press `F1` and then select/type `Run Command` or `Run In Terminal`,
 * or right click the Text Editor and then click `Run Command` to select custom command in editor context menu
