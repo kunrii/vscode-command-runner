@@ -1,6 +1,6 @@
-# VSCodium Command Runner (a fork for VSCodium)
+# VSCodium Command Runner (a fork of VSCode Command Runner for VSCodium)
 
-Run custom shell command defined in vs codium configuration and node module package.json
+Run custom commands defined in vs codium's configuration and node module package.json
 
 ## Features
 
@@ -10,7 +10,7 @@ Run custom shell command defined in vs codium configuration and node module pack
 
 ## Extension Settings
 
-You can defined shell command in vs code configuration
+You can define a command in VSCodium's settings.json configuration file
 
 ```json
 {
@@ -108,8 +108,7 @@ or
 
 ## Usages
 
-* use shortcut `Ctrl+Alt+Space` to select custom command (this is the only difference from the original repo)
-* use shortcut `Ctrl+Alt+R` to run selected content as shell command
-* or press `F1` and then select/type `Run Command` or `Run In Terminal`,
+* use shortcut `Ctrl+Alt+Space` to select custom command
+* use shortcut `Ctrl+Alt+N` to create a workspace settings json file with a basic hello world command as an example
+* or press `F1` and then select/type `Run Command`,
 * or right click the Text Editor and then click `Run Command` to select custom command in editor context menu
-* or right click the Text Editor and then click `Run In Terminal` to run selected content as shell command in editor context menu

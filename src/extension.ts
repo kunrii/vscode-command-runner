@@ -15,6 +15,9 @@
 import * as vscode from 'vscode';
 import Command, { TerminalOptions } from './Command';
 
+const path = require("path")
+const fs = require("fs")
+
 
 /**
  *****************************************
@@ -67,18 +70,33 @@ export function activate(context: vscode.ExtensionContext): void {
         })
     );
 
-    // 注册【在终端运行】命令
     context.subscriptions.push(
-        vscode.commands.registerCommand('command-runner.runInTerminal', ({ terminal }: CommandOptions = {}) => {
-            const command = new Command(context);
+        vscode.commands.registerCommand('command-runner.setupWorkspaceSettingsJson', () => {
 
-            // 兼容终端名参数
-            if (typeof terminal === 'string') {
-                terminal = { name: terminal };
+            let tryCreateFile = () => {
+                filePath = path.join(filePath, "settings.json")
+                const jsonData = {
+                    "command-runner.commands": {
+                        "run hello_world":"echo \"hello world from ${workspaceFolder}, your workspace folder\""
+                    }  
+                }
+                fs.writeFile(filePath, JSON.stringify(jsonData, null, 4))
             }
 
-            // 执行命令
-            command.executeSelectText(terminal);
+            const workspaceRoot = vscode.workspace.rootPath;
+            let filePath = path.join(workspaceRoot, ".vscode")
+            if (fs.existsSync(filePath)){
+                tryCreateFile()
+            } else {
+                fs.mkdir(filePath, (err: any) => {
+                    if (err) {
+                        vscode.window.showInformationMessage('Error creating .vscode folder');
+                    } else {
+                        tryCreateFile()
+                    }
+                })
+            }
+
         })
     );
 }

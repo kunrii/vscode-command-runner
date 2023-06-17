@@ -1,10 +1,10 @@
 {
-	"name": "vscode-command-runner",
+	"name": "vscodium-command-runner",
 	"displayName": "Command Runner",
-	"description": "vscode custom shell command runner",
+	"description": "vscodium custom shell command runner",
 	"version": "0.0.124",
 	"icon": "images/logo.png",
-	"publisher": "edonet",
+	"publisher": "kunrii",
 	"engines": {
 		"vscode": "^1.61.0"
 	},
@@ -13,7 +13,7 @@
 	],
 	"activationEvents": [
 		"onCommand:command-runner.run",
-		"onCommand:command-runner.runInTerminal"
+        "onCommand:command-runner.setupWorkspaceSettingsJson"
 	],
 	"main": "./dist/extension",
 	"scripts": {
@@ -31,10 +31,10 @@
 				"command": "command-runner.run",
 				"title": "Run Command"
 			},
-			{
-				"command": "command-runner.runInTerminal",
-				"title": "Run In Terminal"
-			}
+            {
+                "command": "command-runner.setupWorkspaceSettingsJson",
+                "title": "Setup Workspace Settings Json With Hello World Command"
+            }
 		],
 		"configuration": {
 			"type": "object",
@@ -110,25 +110,20 @@
 		"keybindings": [
 			{
 				"command": "command-runner.run",
-				"key": "ctrl+shift+r",
-				"mac": "ctrl+shift+r"
+				"key": "ctrl+alt+space",
+				"mac": "ctrl+alt+space"
 			},
-			{
-				"command": "command-runner.runInTerminal",
-				"key": "ctrl+alt+r",
-				"mac": "ctrl+alt+r"
-			}
+            {
+                "command": "command-runner.setupWorkspaceSettingsJson",
+                "key": "ctrl+alt+n",
+                "mac": "ctrl+alt+n"
+            }
 		],
 		"menus": {
 			"editor/context": [
 				{
 					"when": "!inOutput && config.command-runner.showRunCommandInEditorContextMenu",
 					"command": "command-runner.run",
-					"group": "navigation"
-				},
-				{
-					"when": "editorHasSelection && !inOutput && config.command-runner.showRunCommandInEditorContextMenu",
-					"command": "command-runner.runInTerminal",
 					"group": "navigation"
 				}
 			],
@@ -172,13 +167,13 @@
 		"command": "${command:workbench.action.openRecent}"
 	},
 	"bugs": {
-		"url": "https://github.com/edonet/vscode-command-runner/issues",
-		"email": "edonet@163.com"
+		"url": "https://github.com/kunrii/vscode-command-runner/issues",
+		"email": "joaosilva1321@outlook.pt"
 	},
-	"homepage": "https://github.com/edonet/vscode-command-runner/blob/master/README.md",
+	"homepage": "https://github.com/kunrii/vscode-command-runner/blob/master/README.md",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/edonet/vscode-command-runner.git"
+		"url": "https://github.com/kunrii/vscode-command-runner.git"
 	},
 	"devDependencies": {
 		"@types/node": "^16.11.4",
@@ -191,7 +186,7 @@
 	},
 	"__metadata": {
 		"id": "c4acb5b7-168f-4561-86ef-79352610787e",
-		"publisherDisplayName": "edonet",
+		"publisherDisplayName": "kunrii",
 		"publisherId": "56102209-e938-4a27-8dad-976ac027ac55"
 	}
 }
