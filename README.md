@@ -116,5 +116,5 @@ or
 ## Notes
 
 * uses yarn to create a package (install it locally or globally) for creating the package for publishing to Open VSX
-* the node package-lock.json file is ignored, you can use whatever packages you want that work, just use "npm install" to fix the UNMET DEPENDENCY problem
+* the node package-lock.json file is ignored, you can use whatever packages you want that work, just use "npm install" to fix the UNMET DEPENDENCY problem; yarn lock is also ignored
 * good reference manual for publishing, includes the commands: https://github.com/eclipse/openvsx/wiki/Publishing-Extensions

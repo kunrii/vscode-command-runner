@@ -78,3 +78,6 @@ package-lock.json
 
 #Ignore workspace settings
 .vscode/settings.json
+
+#Ignore yarn lock
+yarn.lock
