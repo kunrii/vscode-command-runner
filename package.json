@@ -2,7 +2,7 @@
 	"name": "vscodium-command-runner",
 	"displayName": "Command Runner",
 	"description": "VSCodium custom shell command runner",
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"icon": "images/logo.png",
 	"publisher": "kunrii",
 	"engines": {
@@ -122,7 +122,7 @@
 		"menus": {
 			"editor/context": [
 				{
-					"when": "!inOutput && config.command-runner.showRunCommandInEditorContextMenu",
+					"when": "config.command-runner.showRunCommandInEditorContextMenu",
 					"command": "command-runner.run",
 					"group": "navigation"
 				}
