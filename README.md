@@ -5,7 +5,6 @@ Run custom commands defined in vs codium's configuration and node module package
 ## Features
 
 * Run custom shell command
-* Run selected content as shell command
 * Run custom shell command with selected files by explorer context menu
 
 ## Extension Settings
@@ -109,7 +108,6 @@ or
 ## Usages
 
 * use shortcut `Ctrl+Alt+Space` to select custom command
-* use shortcut `Ctrl+Alt+N` to create a workspace settings json file with a basic hello world command as an example
 * or press `F1` and then select/type `Run Command`,
 * or right click the Text Editor and then click `Run Command` to select custom command in editor context menu
 

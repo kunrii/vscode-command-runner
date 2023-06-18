@@ -12,8 +12,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:command-runner.run",
-        "onCommand:command-runner.setupWorkspaceSettingsJson"
+		"onCommand:command-runner.run"
 	],
 	"main": "./dist/extension",
 	"scripts": {
@@ -112,24 +111,12 @@
 				"command": "command-runner.run",
 				"key": "ctrl+alt+space",
 				"mac": "ctrl+alt+space"
-			},
-            {
-                "command": "command-runner.setupWorkspaceSettingsJson",
-                "key": "ctrl+alt+n",
-                "mac": "ctrl+alt+n"
-            }
+			}
 		],
 		"menus": {
 			"editor/context": [
 				{
 					"when": "config.command-runner.showRunCommandInEditorContextMenu",
-					"command": "command-runner.run",
-					"group": "navigation"
-				}
-			],
-			"explorer/context": [
-				{
-					"when": "config.command-runner.showRunCommandInExplorerContextMenu",
 					"command": "command-runner.run",
 					"group": "navigation"
 				}

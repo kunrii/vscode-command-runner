@@ -70,6 +70,7 @@ export function activate(context: vscode.ExtensionContext): void {
         })
     );
 
+    /*
     context.subscriptions.push(
         vscode.commands.registerCommand('command-runner.setupWorkspaceSettingsJson', () => {
 
@@ -112,4 +113,5 @@ export function activate(context: vscode.ExtensionContext): void {
 
         })
     );
+    */
 }
