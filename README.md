@@ -113,7 +113,7 @@ or
 * or press `F1` and then select/type `Run Command`,
 * or right click the Text Editor and then click `Run Command` to select custom command in editor context menu
 
-### Notes
+## Notes
 
 * uses yarn to create a package (install it locally or globally) for creating the package for publishing to Open VSX
 * the node package-lock.json file is ignored, you can use whatever packages you want that work, just use "npm install" to fix the UNMET DEPENDENCY problem
