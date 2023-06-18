@@ -1,8 +1,8 @@
 {
 	"name": "vscodium-command-runner",
 	"displayName": "Command Runner",
-	"description": "vscodium custom shell command runner",
-	"version": "0.0.124",
+	"description": "VSCodium custom shell command runner",
+	"version": "1.0.0",
 	"icon": "images/logo.png",
 	"publisher": "kunrii",
 	"engines": {

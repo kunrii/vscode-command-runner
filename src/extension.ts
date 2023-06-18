@@ -73,24 +73,37 @@ export function activate(context: vscode.ExtensionContext): void {
     context.subscriptions.push(
         vscode.commands.registerCommand('command-runner.setupWorkspaceSettingsJson', () => {
 
+            //Will try to create a file if it does not exist
             let tryCreateFile = () => {
                 filePath = path.join(filePath, "settings.json")
                 const jsonData = {
                     "command-runner.commands": {
-                        "run hello_world":"echo \"hello world from ${workspaceFolder}, your workspace folder\""
-                    }  
+                        "run hello_world": "echo \"hello world (you can add more commands to this workspace as you like\""
+                    }
                 }
-                fs.writeFile(filePath, JSON.stringify(jsonData, null, 4))
+
+                if (fs.existsSync(filePath)) {
+                    vscode.window.showInformationMessage('A settings.json file inside a .vscode folder already exists, will not override it');
+                } else {
+                    fs.writeFile(filePath, JSON.stringify(jsonData, null, 4), (err: any) => {
+                        if (err) {
+                            vscode.window.showInformationMessage('Error creating or writing to settings.json');
+                        }
+                    })
+                }
             }
 
             const workspaceRoot = vscode.workspace.rootPath;
             let filePath = path.join(workspaceRoot, ".vscode")
-            if (fs.existsSync(filePath)){
+
+            //If folder does not exist, it will create it
+            if (fs.existsSync(filePath)) {
                 tryCreateFile()
             } else {
                 fs.mkdir(filePath, (err: any) => {
                     if (err) {
                         vscode.window.showInformationMessage('Error creating .vscode folder');
+                        vscode.window.showInformationMessage(err);
                     } else {
                         tryCreateFile()
                     }

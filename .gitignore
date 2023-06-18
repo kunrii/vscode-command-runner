@@ -75,3 +75,6 @@ typings/
 
 # Ignore node package lock
 package-lock.json
+
+#Ignore workspace settings
+.vscode/settings.json
