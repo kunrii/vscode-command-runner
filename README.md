@@ -1,11 +1,10 @@
 # VSCodium Command Runner (a fork of VSCode Command Runner for VSCodium)
 
-Run custom commands defined in vs codium's configuration and node module package.json
+A simplified version of a VSCode Command Runner. Use it to run commands you define in .vscode's settings.json. If you need to run complex commands, just create a shell script with those commands and the workflow, and run that instead.
 
 ## Features
 
 * Run custom shell command
-* Run custom shell command with selected files by explorer context menu
 
 ## Extension Settings
 
@@ -33,47 +32,7 @@ or in node module package.json
     }
 }
 ```
-
-## Key Binding
-You can bind custom keys for the command which defined in configuration
-```json
-{
-    "key": "ctrl+alt+1",
-    "command": "command-runner.run",
-    "args": { "command": "echo file" }
-}
-```
-
-## Terminal Options
-You can customize the terminal for the command
-```json
-{
-    "key": "ctrl+alt+1",
-    "command": "command-runner.run",
-    "args": {
-        "command": "echo file",
-        "terminal": "runCommand"
-    }
-}
-```
-or
-```json
-{
-    "key": "ctrl+alt+1",
-    "command": "command-runner.run",
-    "args": {
-        "terminal": {
-            "name": "runCommand",
-            "cwd": "path/to/runCommand",
-            "shellArgs": [],
-            "autoClear": true,
-            "autoFocus": true
-        }
-    }
-}
-```
-
-## Predefined Variable
+## Predefined Variables
 
 * `${file}`: activated file path;
 * `${fileBasename}`: activated file basename;
@@ -108,11 +67,8 @@ or
 ## Usages
 
 * use shortcut `Ctrl+Alt+Space` to select custom command
-* or press `F1` and then select/type `Run Command`,
-* or right click the Text Editor and then click `Run Command` to select custom command in editor context menu
 
 ## Notes
 
 * uses yarn to create a package (install it locally or globally) for creating the package for publishing to Open VSX
-* the node package-lock.json file is ignored, you can use whatever packages you want that work, just use "npm install" to fix the UNMET DEPENDENCY problem; yarn lock is also ignored
 * good reference manual for publishing, includes the commands: https://github.com/eclipse/openvsx/wiki/Publishing-Extensions
